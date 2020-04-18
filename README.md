@@ -30,6 +30,18 @@ To identify the user with an ID that is unique in your application, include a us
   
 ```
 
+### Add Config
+
+To utilize the config method you to specify the [widget configuration](https://devdocs.drift.com/docs/widget-configuration#section-drift-config-example) you will pass a _config_ block:
+```javascript
+
+<Drift appId="xxxxx" 
+  userId="1234"
+  config={{ enableWelcomeMessage: 'true' }}
+/>
+  
+```
+
 ### Add Event Handlers
 
 The chatbot widget emits several events. A listing of the events can be found here: https://devdocs.drift.com/docs/drift-events#section-first-interaction

@@ -56,11 +56,17 @@ class Drift extends React.Component {
       `;
       this.insertScript(scriptText);
     }
-    else if(this.props.attributes) {
+    if(this.props.attributes) {
       scriptText = `
         drift.on('ready', function() {
           drift.api.setUserAttributes(${JSON.stringify(this.props.attributes)})
         })
+      `;
+      this.insertScript(scriptText);
+    }
+    if(this.props.config) {
+      scriptText = `
+        drift.config(${JSON.stringify(this.props.config)})
       `;
       this.insertScript(scriptText);
     }
@@ -93,6 +99,7 @@ class Drift extends React.Component {
 const propTypes = {
   appId: PropTypes.string.isRequired,
   attributes: PropTypes.object,
+  config: PropTypes.object,
   eventHandlers: PropTypes.array
 };
 
